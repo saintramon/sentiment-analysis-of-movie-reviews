@@ -17,6 +17,14 @@ def scrape_reviews(page_url):
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    review_elements = soup.find_all('li', class_='film-detail')
+    review_elements = soup.find_all("li", class_="film-detail")
 
-    
+    for review in review_elements:
+        try:
+            text_review = review.find("div", class_="body-text -prose collapsible-text").find('p').get_text(strip=True)
+            review_list.append(text_review)
+        except AttributeError:
+            continue
+
+
+
