@@ -27,7 +27,7 @@ def scrape_reviews(page_url):
             continue
 
 
-for i in range (1,6):
+for i in range (1,11):
     curr_url = f"{URL}{i}"
     scrape_reviews(curr_url)
 
