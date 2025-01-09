@@ -31,6 +31,6 @@ for i in range (1,11):
     curr_url = f"{URL}{i}"
     scrape_reviews(curr_url)
 
-reviews_df = pd.DataFrame(review_list, columns=['review'])
+reviews_df = pd.DataFrame(review_list, columns=['reviews'])
 
 reviews_df.to_csv("letterboxd-anora.csv", index=False)
